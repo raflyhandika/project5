@@ -1,0 +1,142 @@
+
+body {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color:#f0f2f5;
+}
+
+/*Header dan Navigasi (sticky agar tidak terguling) */
+header {
+    background-color: #237dad;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    background-color: #125d8a;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    position: sticky;
+    top: 70px;
+    z-index: 999;  
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #1f78b4;
+    border-radius: 5px;
+    transition: bacground-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0b4f70;
+}
+
+/* Struktur utama halaman */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0,2);
+    height: fit-content;
+}
+
+.content {
+    flex: 3;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0,2);
+}
+
+/* Katalog Produk */
+.catalog-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-snap-type: mandatory;
+}
+
+.product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0,2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.product-card h3 {
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+.product-card .price {
+    color: #008CBA;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 15px;
+}
+
+.product-card button:hover {
+    background-color: #005f7f;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0,2);
+}
+
+/* Footer */
+footer {
+    background-color: #237dad;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    nav {
+        position: static;
+    }
+}
